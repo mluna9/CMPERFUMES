@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C&M Perfumes - Catálogo Premium de Extractos 60ml</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FAF7EF',
+                            100: '#F3ECDA',
+                            200: '#E6D7B3',
+                            400: '#D4AF37',
+                            500: '#C59B27',
+                            600: '#B2881E',
+                            700: '#8C6712',
+                            800: '#5F460B',
+                        },
+                        luxgray: {
+                            50: '#F9FAFB',
+                            100: '#F3F4F6',
+                            800: '#151922',
+                            900: '#0C0F14',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF8F5;
+            color: #151922;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        .aura-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 18px -2px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .aura-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px -4px rgba(197, 155, 39, 0.2);
+            border-color: #D4AF37;
+        }
+        .gold-button {
+            background: linear-gradient(135deg, #D4AF37 0%, #B2881E 100%);
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+        .gold-button:hover {
+            background: linear-gradient(135deg, #E2BD46 0%, #8C6712 100%);
+            box-shadow: 0 4px 18px rgba(197, 155, 39, 0.35);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .carousel-slide {
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-white">
+
+    <div class="bg-luxgray-900 text-white text-xs py-2.5 px-4 text-center font-medium tracking-wide flex justify-between items-center border-b border-gold-500/30">
+        <span class="hidden md:inline text-gold-200">
+            <i class="fa-solid fa-crown text-gold-400 mr-1.5"></i> <strong>C&M PERFUMES</strong> • Extractos Puros 60ml
+        </span>
+        <span class="w-full md:w-auto text-center font-semibold">
+            <span class="bg-gold-500/20 text-gold-300 px-2 py-0.5 rounded mr-1">PROMO:</span> 1 x $20.000 | Llevando 2 o más a <span class="text-gold-400 font-bold">$17.500 c/u</span>
+        </span>
+        <button onclick="openWhatsAppConfigModal()" class="hidden md:flex items-center gap-1 text-xs text-gray-300 hover:text-gold-300 transition underline">
+            <i class="fa-solid fa-gear"></i> Config
+        </button>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 py-3 flex items-center justify-between gap-4">
+            
+            <!-- NUEVO LOGO ESTÉTICO C&M PERFUMES -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-luxgray-900 via-luxgray-800 to-black p-0.5 border border-gold-400/50 shadow-md group-hover:scale-105 transition">
+                    <div class="w-full h-full rounded-[10px] bg-luxgray-900 flex items-center justify-center relative overflow-hidden">
+                        <!-- Icono SVG Botella de Perfume de Lujo estilizada -->
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 text-gold-400">
+                            <!-- Frasco de Perfume Estilizado -->
+                            <path d="M35,38 L65,38 L72,85 C72,88 69,90 65,90 L35,90 C31,90 28,88 28,85 L35,38 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <!-- Cuello y Tapa -->
+                            <rect x="42" y="24" width="16" height="14" rx="2" fill="currentColor"/>
+                            <rect x="38" y="12" width="24" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="3"/>
+                            <!-- Brillo / Monograma C&M -->
+                            <text x="50" y="68" font-family="'Cinzel', serif" font-weight="800" font-size="20" fill="currentColor" text-anchor="middle">C&M</text>
+                            <circle cx="70" cy="22" r="3" fill="#FFE885"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-serif text-2xl font-black tracking-wider text-luxgray-900 group-hover:text-gold-600 transition">C&M</span>
+                        <span class="text-xs font-serif font-bold text-gold-600 tracking-widest uppercase">PERFUMES</span>
+                    </div>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-gray-500 font-bold -mt-1">Extractos de Perfume 60ml</span>
+                </div>
+            </a>
+
+            <!-- Search Bar Desktop -->
+            <div class="hidden md:flex flex-1 max-w-md relative">
+                <input type="text" id="searchInput" oninput="renderCatalog()" placeholder="Buscar fragancia o marca (ej: Le Male Elixir, Invictus, Sauvage)..." 
+                    class="w-full bg-gray-50 border border-gray-300 rounded-full py-2.5 pl-10 pr-4 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-gold-500 focus:bg-white transition shadow-inner">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gold-600 text-xs"></i>
+            </div>
+
+            <!-- Actions Header -->
+            <div class="flex items-center gap-3">
+                <a href="https://instagram.com/indumentaria.drake" target="_blank" class="p-2 text-pink-600 hover:text-pink-700 transition text-xl" title="Instagram @indumentaria.drake">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <button onclick="openWhatsAppConfigModal()" title="Configuración" class="p-2 text-gray-600 hover:text-gold-600 transition text-lg">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                
+                <button onclick="toggleCartDrawer()" class="relative bg-luxgray-900 text-gold-400 hover:bg-gold-500 hover:text-white p-2.5 rounded-xl flex items-center justify-center transition shadow-md border border-gold-500/30">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 bg-gold-500 text-luxgray-900 font-extrabold text-[11px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Mobile -->
+        <div class="md:hidden px-4 pb-3">
+            <div class="relative w-full">
+                <input type="text" id="searchInputMobile" oninput="syncAndRenderSearch(this.value)" placeholder="Buscar fragancia o marca..." 
+                    class="w-full bg-gray-100 border border-gray-300 rounded-full py-2 pl-10 pr-4 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-gold-500">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gold-600 text-xs"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        
+        <!-- Hero Section con Colores de Lujo -->
+        <div class="bg-gradient-to-r from-luxgray-900 via-luxgray-800 to-black rounded-2xl border border-gold-500/30 p-6 sm:p-8 mb-8 text-white shadow-xl relative overflow-hidden">
+            
+            <div class="relative min-h-[220px] sm:min-h-[200px]">
+                
+                <!-- Slide 1: Presentación C&M -->
+                <div class="carousel-slide active flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-3 max-w-xl text-center md:text-left z-10">
+                        <span class="inline-block px-3 py-1 bg-gold-500/20 border border-gold-400/40 rounded-full text-gold-300 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-droplet text-gold-400 mr-1"></i> MÁXIMA CONCENTRACIÓN 60ML • PIEL +8 HORAS
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-4xl font-black text-white tracking-wide">
+                            Extractos Puros C&M
+                        </h2>
+                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                            Contamos con <strong>Stock disponible para entrega inmediata</strong> y encaramos pedidos semanales.
+                        </p>
+
+                        <!-- Pricing Callout -->
+                        <div class="pt-2 flex flex-wrap items-center gap-3 justify-center md:justify-start">
+                            <div class="bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-2 rounded-xl text-left">
+                                <span class="text-[10px] text-gray-300 block uppercase font-semibold">1 Unidad</span>
+                                <span class="text-lg font-serif font-bold text-white">$20.000</span>
+                            </div>
+                            <div class="bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-2 rounded-xl text-left shadow-lg border border-emerald-400/30">
+                                <span class="text-[10px] text-emerald-100 block uppercase font-bold"><i class="fa-solid fa-fire mr-1"></i> Llevando 2 o más</span>
+                                <span class="text-xl font-serif font-bold text-white">$17.500 <span class="text-xs font-normal opacity-80">c/u</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-80 h-48 bg-white/5 backdrop-blur-md rounded-2xl p-4 flex flex-col items-center justify-center text-center text-white border border-gold-400/30 shadow-2xl relative">
+                        <div class="w-14 h-14 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center mb-2">
+                            <i class="fa-solid fa-gem text-gold-400 text-2xl"></i>
+                        </div>
+                        <h4 class="font-serif text-sm font-bold text-gold-300 uppercase tracking-wider">Perfumería de Alta Gama</h4>
+                        <p class="text-[11px] text-gray-300 mt-1">Extractos de máxima duración en piel y estela intensa.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Trilogía Invictus (Con fotos de las 3 botellas reales) -->
+                <div class="carousel-slide flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-3 max-w-xl text-center md:text-left z-10">
+                        <span class="inline-block px-3 py-1 bg-amber-500/20 border border-amber-400/40 rounded-full text-amber-300 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Promo Especial
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-white">
+                            COMBO TRILOGÍA INVICTUS
+                        </h2>
+                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                            Llevate las 3 fragancias icónicas de Invictus con el beneficio de la promoción especial.
+                        </p>
+                        <div class="pt-1">
+                            <button onclick="setCategory('masculino')" class="gold-button px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                                Ver Colección Masculina
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Muestra de COMBO 3 estilo de la foto proporcionada -->
+                    <div class="w-full md:w-80 h-48 bg-white/10 backdrop-blur-md rounded-2xl p-3 flex flex-col items-center justify-center border border-gold-500/30 shadow-2xl relative overflow-hidden">
+                        <span class="font-serif text-xs font-black tracking-widest text-gold-300 uppercase mb-1">COMBO</span>
+                        <span class="font-serif text-2xl font-extrabold text-white tracking-wider border-b border-gold-400/40 pb-0.5 mb-2">TRILOGÍA 3</span>
+                        <div class="flex items-center justify-center gap-2">
+                            <img src="https://m.media-amazon.com/images/I/61M63D12y6L._SL1500_.jpg" alt="Invictus Victory" class="h-20 object-contain drop-shadow-md">
+                            <img src="https://m.media-amazon.com/images/I/61-gKjJ6UBL._SL1500_.jpg" alt="Invictus Legend" class="h-22 object-contain drop-shadow-md scale-110">
+                            <img src="https://m.media-amazon.com/images/I/61KqN6xIinL._SL1500_.jpg" alt="Invictus Elixir" class="h-20 object-contain drop-shadow-md">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carousel Nav Dots -->
+            <div class="flex justify-center gap-2 mt-4 pt-2 border-t border-white/10">
+                <button onclick="setCarouselSlide(0)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-gold-400 transition-all"></button>
+                <button onclick="setCarouselSlide(1)" class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-500 transition-all"></button>
+            </div>
+        </div>
+
+        <section id="catalog" class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-serif text-xl sm:text-2xl font-bold text-luxgray-900 flex items-center gap-2">
+                    <span class="w-1.5 h-6 bg-gold-500 rounded-full inline-block"></span>
+                    Catálogo de Extractos 60ml
+                </h3>
+                <span id="productCounter" class="text-xs text-gray-500 font-medium">Cargando frascos...</span>
+            </div>
+
+            <!-- Categorías -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar text-xs font-semibold">
+                <button onclick="setCategory('all')" id="cat-all" class="category-tab active px-5 py-2.5 rounded-full border border-luxgray-900 bg-luxgray-900 text-white transition shrink-0">
+                    Todos los Extractos
+                </button>
+                <button onclick="setCategory('femenino')" id="cat-femenino" class="category-tab px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:border-gold-500 hover:text-gold-700 transition shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-venus text-pink-500"></i> Femeninos
+                </button>
+                <button onclick="setCategory('masculino')" id="cat-masculino" class="category-tab px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:border-gold-500 hover:text-gold-700 transition shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-mars text-blue-500"></i> Masculinos
+                </button>
+                <button onclick="setCategory('unisex')" id="cat-unisex" class="category-tab px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:border-gold-500 hover:text-gold-700 transition shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-crown text-purple-500"></i> Unisex / Árabes
+                </button>
+                <button onclick="setCategory('top')" id="cat-top" class="category-tab px-5 py-2.5 rounded-full border border-gray-200 bg-white text-gray-700 hover:border-gold-500 hover:text-gold-700 transition shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-fire text-amber-500"></i> Más Vendidos
+                </button>
+                <button onclick="openWholesaleModal()" class="category-tab px-5 py-2.5 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition shrink-0 flex items-center gap-1.5 font-bold">
+                    <i class="fa-solid fa-tags text-emerald-600"></i> Precios Mayoristas
+                </button>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid">
+            <!-- Render dinámico desde JS -->
+        </section>
+
+        <!-- Estado de Búsqueda Vacía -->
+        <div id="noResultsState" class="hidden py-16 text-center space-y-3 bg-white rounded-2xl border border-gray-200 my-6 shadow-sm">
+            <i class="fa-solid fa-magnifying-glass text-4xl text-gray-300"></i>
+            <h4 class="text-lg font-serif font-bold text-gray-800">No encontramos esa fragancia</h4>
+            <p class="text-xs text-gray-500 max-w-sm mx-auto">Probá con palabras clave como "Le Male", "La Vida es Bella", "Invictus", "Sauvage" o "Baccarat".</p>
+            <button onclick="resetFilters()" class="gold-button px-5 py-2 rounded-full text-xs font-semibold">Ver Todos los Extractos</button>
+        </div>
+    </main>
+
+    <div id="productModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white border border-gray-200 rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto p-6 relative shadow-2xl text-gray-800">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-500 hover:text-luxgray-900 text-lg w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center transition z-20">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+                
+                <!-- Columna Izquierda: Visor con Selector de 3 Imágenes al estilo del ejemplo -->
+                <div class="space-y-3">
+                    <div class="relative aspect-square rounded-2xl bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 border border-gray-300 flex items-center justify-center p-3 overflow-hidden shadow-inner">
+                        
+                        <!-- Contenedor dinámico de la foto activa -->
+                        <div id="modalImageContainer" class="w-full h-full flex items-center justify-center">
+                            <!-- Inyectado vía JS -->
+                        </div>
+
+                        <!-- Indicador de foto -->
+                        <span id="modalImageLabel" class="absolute bottom-2 left-2 bg-luxgray-900/80 text-gold-300 text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-gold-500/30">
+                            1. Banner 60mL
+                        </span>
+                    </div>
+
+                    <!-- Miniaturas para cambiar entre las 3 imágenes exactas -->
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="switchModalTab('original')" id="thumb-original" class="border-2 border-gold-500 rounded-xl p-1 bg-white h-16 flex flex-col items-center justify-center transition">
+                            <span class="text-[9px] font-bold text-gray-700 block mb-0.5">1. Frasco + 60ml</span>
+                            <i class="fa-solid fa-image text-gold-600 text-xs"></i>
+                        </button>
+                        <button onclick="switchModalTab('sketch')" id="thumb-sketch" class="border border-gray-200 rounded-xl p-1 bg-white h-16 flex flex-col items-center justify-center transition hover:border-gold-400">
+                            <span class="text-[9px] font-bold text-gray-700 block mb-0.5">2. Estilo Dibujo</span>
+                            <i class="fa-solid fa-pen-nib text-gold-600 text-xs"></i>
+                        </button>
+                        <button onclick="switchModalTab('pyramid')" id="thumb-pyramid" class="border border-gray-200 rounded-xl p-1 bg-white h-16 flex flex-col items-center justify-center transition hover:border-gold-400">
+                            <span class="text-[9px] font-bold text-gray-700 block mb-0.5">3. Notas Olfativas</span>
+                            <i class="fa-solid fa-flask text-gold-600 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Información y Compra -->
+                <div class="flex flex-col justify-between space-y-4">
+                    <div>
+                        <span id="modalBrand" class="text-[10px] uppercase tracking-widest text-gold-700 font-extrabold bg-gold-50 px-2.5 py-1 rounded-md border border-gold-200 inline-block mb-2"></span>
+                        <h3 id="modalTitle" class="font-serif text-2xl font-black text-luxgray-900 leading-tight"></h3>
+                        <p class="text-xs text-gray-500 font-medium mb-3">Extracto de Perfume Alta Concentración (60ml)</p>
+
+                        <!-- Precios Callout -->
+                        <div class="bg-gray-50 p-3.5 rounded-2xl border border-gray-200 mb-4 space-y-2">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-600">Por 1 unidad:</span>
+                                <span class="text-base font-bold text-luxgray-900 font-serif">$20.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs border-t border-gray-200 pt-2">
+                                <span class="text-emerald-700 font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-tags"></i> Promo (2 o más):
+                                </span>
+                                <span class="text-xl font-bold font-serif text-emerald-600">$17.500 <span class="text-[10px] font-normal text-gray-500">c/u</span></span>
+                            </div>
+                        </div>
+
+                        <!-- Pirámide olfativa resumida -->
+                        <div class="space-y-2 mb-4">
+                            <p class="text-xs font-bold text-gray-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-droplet text-gold-500"></i> Notas Olfativas Principales:
+                            </p>
+                            <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 text-xs space-y-1">
+                                <p><span class="text-gold-700 font-bold">Salida:</span> <span id="modalNotesTop" class="text-gray-600"></span></p>
+                                <p><span class="text-gold-700 font-bold">Corazón:</span> <span id="modalNotesHeart" class="text-gray-600"></span></p>
+                                <p><span class="text-gold-700 font-bold">Fondo:</span> <span id="modalNotesBase" class="text-gray-600"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-gray-200 flex items-center gap-3">
+                        <div class="flex items-center border border-gray-300 rounded-xl bg-gray-50">
+                            <button onclick="adjustModalQty(-1)" class="px-3 py-2 text-gray-600 hover:text-luxgray-900"><i class="fa-solid fa-minus text-xs"></i></button>
+                            <span id="modalQtyDisplay" class="px-3 py-2 text-sm font-bold text-luxgray-900">1</span>
+                            <button onclick="adjustModalQty(1)" class="px-3 py-2 text-gray-600 hover:text-luxgray-900"><i class="fa-solid fa-plus text-xs"></i></button>
+                        </div>
+
+                        <button onclick="addModalItemToCart()" class="flex-1 gold-button py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md uppercase tracking-wider">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartOverlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <aside id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between border-l border-gray-200 shadow-2xl">
+        
+        <div class="p-5 border-b border-gray-200 flex items-center justify-between bg-luxgray-900 text-white">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-bag-shopping text-gold-400 text-lg"></i>
+                <h3 class="font-serif text-lg font-bold text-white">Tu Pedido C&M Perfumes</h3>
+            </div>
+            <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-lg w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="flex-grow overflow-y-auto">
+            <!-- Items del Carrito -->
+            <div id="cartItemsContainer" class="p-5 space-y-3">
+                <!-- Inyectados por JS -->
+            </div>
+
+            <!-- Upsell / Cross-Selling Section: Llevate la 2da unidad con descuento -->
+            <div id="cartUpsellSection" class="p-4 mx-5 my-2 bg-gradient-to-r from-gold-50 to-amber-50 border border-gold-300 rounded-2xl hidden">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-gold-800 flex items-center gap-1">
+                        <i class="fa-solid fa-fire text-amber-500"></i> ¡Aprovechá la Promo!
+                    </span>
+                    <span class="text-[10px] bg-gold-500 text-white font-bold px-2 py-0.5 rounded-full">-$2.500 c/u</span>
+                </div>
+                <p class="text-[11px] text-gray-600 mb-3">Agregá otra fragancia y pagás **$17.500 cada una**:</p>
+
+                <!-- Grid de recomendaciones rápidas -->
+                <div id="upsellProductsList" class="space-y-2">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrito Vacío State -->
+        <div id="cartEmptyState" class="p-8 text-center my-auto space-y-3">
+            <i class="fa-solid fa-vial-circle-check text-4xl text-gray-300"></i>
+            <p class="text-base font-serif font-bold text-gray-700">Tu pedido está vacío</p>
+            <p class="text-xs text-gray-500">Elegí tus fragancias. Recordá que llevando 2 o más abonás solo **$17.500 c/u**.</p>
+        </div>
+
+        <div id="cartFooter" class="p-5 border-t border-gray-200 bg-gray-50 space-y-4">
+            
+            <div id="promoNoticeBadge" class="p-2.5 rounded-xl text-xs flex items-center gap-2 transition font-medium">
+                <!-- Injected JS Promo Info -->
+            </div>
+
+            <div class="space-y-1.5 text-xs">
+                <div class="flex justify-between text-gray-600">
+                    <span>Unidades totales (60ml):</span>
+                    <span id="cartTotalItemsCount" class="font-bold text-luxgray-900">0 un.</span>
+                </div>
+                <div class="flex justify-between text-gray-600">
+                    <span>Precio unitario aplicado:</span>
+                    <span id="cartUnitPriceNotice" class="text-gold-700 font-bold">$20.000</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-luxgray-900 font-serif pt-2 border-t border-gray-200">
+                    <span>Total Estimado:</span>
+                    <span id="cartTotal" class="text-gold-600">$0</span>
+                </div>
+            </div>
+
+            <form id="orderForm" onsubmit="sendOrderToWhatsApp(event)" class="space-y-2.5 pt-1">
+                <div>
+                    <label class="block text-[10px] uppercase font-bold text-gray-500 mb-1">Nombre Completo *</label>
+                    <input type="text" id="clientName" required placeholder="Ej: Camila Rossi" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs text-gray-800 focus:outline-none focus:border-gold-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-gray-500 mb-1">Localidad *</label>
+                        <input type="text" id="clientCity" required placeholder="Ej: San Miguel" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs text-gray-800 focus:outline-none focus:border-gold-500">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-gray-500 mb-1">Forma de Entrega</label>
+                        <select id="clientDelivery" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs text-gray-800 focus:outline-none focus:border-gold-500">
+                            <option value="Entrega Gratuita San Miguel">Entrega Gratis en San Miguel</option>
+                            <option value="Envío a Domicilio (A coordinar)">A Domicilio (A coordinar)</option>
+                            <option value="Envío por Correo (A coordinar)">Por Correo (A coordinar)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-bold text-gray-500 mb-1">Medio de Pago</label>
+                    <select id="clientPayment" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs text-gray-800 focus:outline-none focus:border-gold-500">
+                        <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+                        <option value="Efectivo">Efectivo al entregar</option>
+                        <option value="Mercado Pago">Mercado Pago / Tarjetas</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg uppercase tracking-wider transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Enviar Pedido por WhatsApp
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Modal de Precios Mayoristas -->
+    <div id="wholesaleModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white border border-gray-200 rounded-2xl max-w-md w-full p-6 relative shadow-2xl text-gray-800 space-y-4">
+            <button onclick="closeWholesaleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-luxgray-900 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3 border-b border-gray-100 pb-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-luxgray-900">Ventas Mayoristas & Reventa</h3>
+                    <p class="text-xs text-gray-500">Escalas de Precios C&M Perfumes</p>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-xs">
+                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex justify-between items-center">
+                    <div>
+                        <span class="font-bold text-gray-800 block">1 Unidad</span>
+                        <span class="text-gray-500 text-[11px]">Uso personal</span>
+                    </div>
+                    <span class="font-serif font-bold text-base text-gray-900">$20.000</span>
+                </div>
+
+                <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex justify-between items-center">
+                    <div>
+                        <span class="font-bold text-emerald-900 block">Llevando 2 o más (Promo)</span>
+                        <span class="text-emerald-700 text-[11px]">Descuento directo por unidad</span>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-emerald-600">$17.500 <span class="text-xs font-normal">c/u</span></span>
+                </div>
+
+                <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 flex justify-between items-center">
+                    <div>
+                        <span class="font-bold text-amber-900 block">Pack Revendedor / Mayorista (+6 un)</span>
+                        <span class="text-amber-700 text-[11px]">Consultá precio mayorista por lote</span>
+                    </div>
+                    <span class="font-serif font-bold text-sm text-amber-800">Para revendedor consultar</span>
+                </div>
+            </div>
+
+            <div class="pt-2">
+                <a href="https://wa.me/5491138586486?text=Hola!%20Quisiera%20consultar%20precios%20mayoristas%20para%20revendedor" target="_blank" class="w-full gold-button py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 uppercase tracking-wider">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Para revendedor consultar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Configuración -->
+    <div id="wspConfigModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white border border-gray-200 rounded-2xl max-w-md w-full p-6 relative shadow-2xl text-gray-800 space-y-4">
+            <button onclick="closeWhatsAppConfigModal()" class="absolute top-4 right-4 text-gray-400 hover:text-luxgray-900 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold text-luxgray-900">Configuración C&M</h3>
+                    <p class="text-xs text-gray-500">Teléfono para recibir pedidos</p>
+                </div>
+            </div>
+
+            <div class="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
+                <label class="block text-xs font-bold text-gray-700">Número telefónico:</label>
+                <input type="text" id="wspNumberInput" placeholder="Ej: 5491138586486" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm text-luxgray-900 font-mono focus:outline-none focus:border-gold-500">
+            </div>
+
+            <div class="flex justify-end gap-2 pt-1">
+                <button onclick="closeWhatsAppConfigModal()" class="px-4 py-2 rounded-lg text-xs font-semibold text-gray-500 hover:text-gray-800">Cerrar</button>
+                <button onclick="saveWhatsAppNumber()" class="gold-button px-5 py-2 rounded-lg text-xs font-bold">Guardar Número</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 bg-luxgray-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none border border-gold-500/40">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMessage" class="text-xs font-medium">Producto añadido</span>
+    </div>
+
+    <footer class="bg-luxgray-900 text-gray-300 text-xs py-10 border-t border-gold-500/30 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                    <span class="font-serif text-lg font-bold text-white tracking-wider">C&M PERFUMES</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                    Especialistas en Extractos Puros de Perfume 60ml. Alta fijación y concentración prolongada en piel.
+                </p>
+                <div class="pt-2 flex items-center gap-3">
+                    <a href="https://instagram.com/indumentaria.drake" target="_blank" class="flex items-center gap-2 bg-pink-900/40 border border-pink-500/30 text-pink-300 px-3 py-1.5 rounded-lg hover:bg-pink-900/60 transition">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                        <span>@indumentaria.drake</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-xs font-bold text-gold-400 uppercase tracking-wider mb-3">Precios & Envíos</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li>• 1 Extracto 60ml: <strong>$20.000</strong></li>
+                    <li>• 2 o más Extractos 60ml: <strong>$17.500 c/u</strong></li>
+                    <li>• Entregas gratuitas en San Miguel</li>
+                    <li>• Envíos a todo el país</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-xs font-bold text-gold-400 uppercase tracking-wider mb-3">Atención al Cliente</h4>
+                <p class="text-gray-400 mb-2">WhatsApp de Pedidos: <strong class="text-emerald-400">+54 9 11 3858-6486</strong></p>
+                <button onclick="openWhatsAppConfigModal()" class="text-gold-400 hover:text-gold-200 underline text-[11px]">
+                    <i class="fa-solid fa-gear mr-1"></i> Configuración
+                </button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-800 text-center text-[11px] text-gray-500">
+            &copy; 2026 C&M Perfumes - Catálogo de Extractos 60ml.
+        </div>
+    </footer>
+
+    <script>
+        const SINGLE_PRICE = 20000;
+        const PROMO_PRICE = 17500;
+
+        let storeWhatsAppNumber = "5491138586486";
+
+        // Perfumes actualizados con paletas de color y estilos para renderizado visual impecable
+        const products = [
+            {
+                id: "cm-13",
+                title: "LE MALE ELIXIR",
+                inspiredBrand: "JEAN PAUL GAULTIER",
+                category: "masculino",
+                isTop: true,
+                bottleColor: "#D4AF37", // Dorado
+                accentColor: "#151922",
+                notes: { top: "Menta Helada, Lavanda", heart: "Benzuí Resinoso, Vainilla", base: "Miel Dorada, Haba Tonka, Tabaco" }
+            },
+            {
+                id: "cm-02",
+                title: "LA VIDA ES BELLA",
+                inspiredBrand: "LANCÔME",
+                category: "femenino",
+                isTop: true,
+                bottleColor: "#F472B6", // Rosa
+                accentColor: "#F3ECDA",
+                notes: { top: "Grosella Negra, Pera", heart: "Iris, Jazmín, Flor de Azahar", base: "Praliné, Vainilla, Pachulí" }
+            },
+            {
+                id: "cm-01",
+                title: "MY WAY",
+                inspiredBrand: "GIORGIO ARMANI",
+                category: "femenino",
+                isTop: true,
+                bottleColor: "#EC4899", // Rosa Intenso
+                accentColor: "#3B82F6",
+                notes: { top: "Flor de Azahar, Bergamota", heart: "Tuberosa, Jazmín de la India", base: "Vainilla de Madagascar, Almizcle Blanco" }
+            },
+            {
+                id: "cm-16",
+                title: "SAUVAGE ELIXIR",
+                inspiredBrand: "DIOR",
+                category: "masculino",
+                isTop: true,
+                bottleColor: "#1E3A8A", // Azul Noche
+                accentColor: "#D4AF37",
+                notes: { top: "Canela, Nuez Moscada, Cardamomo", heart: "Lavanda Concentrada", base: "Regaliz, Sándalo, Ámbar" }
+            },
+            {
+                id: "cm-18",
+                title: "INVICTUS VICTORY ELIXIR",
+                inspiredBrand: "PACO RABANNE",
+                category: "masculino",
+                isTop: true,
+                bottleColor: "#111827", // Negro Azabache
+                accentColor: "#F59E0B",
+                notes: { top: "Limón, Pimienta Rosa", heart: "Incienso, Lavanda", base: "Haba Tonka, Vainilla, Ámbar" }
+            },
+            {
+                id: "cm-03",
+                title: "GOOD GIRL",
+                inspiredBrand: "CAROLINA HERRERA",
+                category: "femenino",
+                isTop: true,
+                bottleColor: "#1E1B4B", // Azul Oscuro
+                accentColor: "#D4AF37",
+                notes: { top: "Almendra, Café, Bergamota", heart: "Tuberosa, Jazmín Sambac", base: "Haba Tonka, Cacao, Vainilla" }
+            },
+            {
+                id: "cm-28",
+                title: "KHAMRAH",
+                inspiredBrand: "LATTAFA (ÁRABE)",
+                category: "unisex",
+                isTop: true,
+                bottleColor: "#B45309", // Ámbar Cálido
+                accentColor: "#FEF3C7",
+                notes: { top: "Canela, Nuez Moscada, Bergamota", heart: "Dátiles, Praliné, Tuberosa", base: "Vainilla, Haba Tonka, Mirra" }
+            },
+            {
+                id: "cm-26",
+                title: "ERBA PURA",
+                inspiredBrand: "XERJOFF (NICHO)",
+                category: "unisex",
+                isTop: true,
+                bottleColor: "#06B6D4", // Turquesa
+                accentColor: "#FDE047",
+                notes: { top: "Naranja de Sicilia, Bergamota", heart: "Frutas Mediterráneas", base: "Almizcle Blanco, Vainilla" }
+            },
+            {
+                id: "cm-12",
+                title: "STRONGER WITH YOU",
+                inspiredBrand: "EMPORIO ARMANI",
+                category: "masculino",
+                isTop: true,
+                bottleColor: "#92400E", // Cobre
+                accentColor: "#F3ECDA",
+                notes: { top: "Cardamomo, Pimienta Rosa", heart: "Salvia, Canela", base: "Vainilla, Castaña Glaseada" }
+            },
+            {
+                id: "cm-14",
+                title: "VALENTINO BORN IN ROMA",
+                inspiredBrand: "VALENTINO",
+                category: "masculino",
+                isTop: true,
+                bottleColor: "#000000", // Negro con Rosa
+                accentColor: "#EC4899",
+                notes: { top: "Notas Marinas, Sal Violeta", heart: "Salvia, Jengibre", base: "Vetiver, Notas Amaderadas" }
+            },
+            {
+                id: "cm-27",
+                title: "BACCARAT ROUGE 540",
+                inspiredBrand: "MAISON FRANCIS KURKDJIAN",
+                category: "unisex",
+                isTop: true,
+                bottleColor: "#991B1B", // Rojo Rubí
+                accentColor: "#D4AF37",
+                notes: { top: "Jazmín, Azafrán Exótico", heart: "Madera de Ámbar, Ámbar Gris", base: "Resina de Abeto, Cedro" }
+            },
+            {
+                id: "cm-30",
+                title: "YARA ROSA",
+                inspiredBrand: "LATTAFA (ÁRABE)",
+                category: "femenino",
+                isTop: true,
+                bottleColor: "#F472B6", // Rosa Pastel
+                accentColor: "#FFFFFF",
+                notes: { top: "Orquídea, Heliotropo, Mandarina", heart: "Acorde Gourmand, Frutas", base: "Vainilla, Almizcle, Sándalo" }
+            }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+        let modalCurrentProduct = null;
+        let modalActiveTab = 'original'; 
+        let modalQty = 1;
+        let currentSlide = 0;
+        let carouselTimer = null;
+
+        // --- FUNCIONES GLOBALES PARA EVENTOS ONCLICK ---
+        window.setCategory = function(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.category-tab').forEach(btn => {
+                btn.classList.remove('bg-luxgray-900', 'text-white', 'border-luxgray-900');
+                btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+            });
+
+            const activeBtn = document.getElementById(`cat-${cat}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+                activeBtn.classList.add('bg-luxgray-900', 'text-white', 'border-luxgray-900');
+            }
+            renderCatalog();
+        };
+
+        window.openWhatsAppConfigModal = function() {
+            document.getElementById('wspNumberInput').value = storeWhatsAppNumber;
+            const modal = document.getElementById('wspConfigModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        };
+
+        window.closeWhatsAppConfigModal = function() {
+            const modal = document.getElementById('wspConfigModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+
+        window.saveWhatsAppNumber = function() {
+            const num = document.getElementById('wspNumberInput').value.trim();
+            if (num) {
+                storeWhatsAppNumber = num;
+                localStorage.setItem('cm_wsp_number', num);
+                showToast("Número de WhatsApp actualizado");
+                closeWhatsAppConfigModal();
+            }
+        };
+
+        window.toggleCartDrawer = function() {
+            const drawer = document.getElementById('cartDrawer');
+            const overlay = document.getElementById('cartOverlay');
+
+            if (drawer.classList.contains('translate-x-full')) {
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    drawer.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        };
+
+        window.setCarouselSlide = function(index) {
+            currentSlide = index;
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+
+            slides.forEach((slide, idx) => {
+                if (idx === index) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, idx) => {
+                if (idx === index) {
+                    dot.classList.remove('bg-gray-500');
+                    dot.classList.add('bg-gold-400', 'w-6');
+                } else {
+                    dot.classList.remove('bg-gold-400', 'w-6');
+                    dot.classList.add('bg-gray-500', 'w-2.5');
+                }
+            });
+        };
+
+        window.syncAndRenderSearch = function(val) {
+            document.getElementById('searchInput').value = val;
+            renderCatalog();
+        };
+
+        window.openWholesaleModal = function() {
+            const modal = document.getElementById('wholesaleModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        };
+
+        window.closeWholesaleModal = function() {
+            const modal = document.getElementById('wholesaleModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+
+        window.resetFilters = function() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInputMobile').value = '';
+            setCategory('all');
+        };
+
+        window.openProductModal = function(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            modalCurrentProduct = product;
+            modalQty = 1;
+
+            document.getElementById('modalTitle').innerText = product.title;
+            document.getElementById('modalBrand').innerText = `INSPIRADO EN ${product.inspiredBrand}`;
+            document.getElementById('modalNotesTop').innerText = product.notes.top;
+            document.getElementById('modalNotesHeart').innerText = product.notes.heart;
+            document.getElementById('modalNotesBase').innerText = product.notes.base;
+            document.getElementById('modalQtyDisplay').innerText = modalQty;
+
+            switchModalTab('original');
+
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        };
+
+        window.closeProductModal = function() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        };
+
+        window.switchModalTab = function(tab) {
+            if (!modalCurrentProduct) return;
+            modalActiveTab = tab;
+
+            const container = document.getElementById('modalImageContainer');
+            const label = document.getElementById('modalImageLabel');
+
+            ['original', 'sketch', 'pyramid'].forEach(t => {
+                const btn = document.getElementById(`thumb-${t}`);
+                if (btn) {
+                    btn.classList.remove('border-2', 'border-gold-500');
+                    btn.classList.add('border-gray-200');
+                }
+            });
+
+            const activeBtn = document.getElementById(`thumb-${tab}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-gray-200');
+                activeBtn.classList.add('border-2', 'border-gold-500');
+            }
+
+            if (tab === 'original') {
+                container.innerHTML = generateProductBottleSVG(modalCurrentProduct);
+                label.innerText = "1. Frasco de Extracto C&M";
+            } else if (tab === 'sketch') {
+                container.innerHTML = generateSketchSVG(modalCurrentProduct.title);
+                label.innerText = "2. Ilustración Boceto C&M";
+            } else if (tab === 'pyramid') {
+                container.innerHTML = generatePyramidSVG(modalCurrentProduct.notes);
+                label.innerText = "3. Pirámide Olfativa & Notas";
+            }
+        };
+
+        window.adjustModalQty = function(delta) {
+            modalQty += delta;
+            if(modalQty < 1) modalQty = 1;
+            document.getElementById('modalQtyDisplay').innerText = modalQty;
+        };
+
+        window.addModalItemToCart = function() {
+            if (!modalCurrentProduct) return;
+            addToCart(modalCurrentProduct.id, modalQty);
+            closeProductModal();
+        };
+
+        window.quickAddToCart = function(id) {
+            addToCart(id, 1);
+        };
+
+        window.addToCart = function(id, qty) {
+            const existingIndex = cart.findIndex(item => item.id === id);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += qty;
+            } else {
+                const product = products.find(p => p.id === id);
+                if (product) {
+                    cart.push({ ...product, qty: qty });
+                }
+            }
+            updateCartUI();
+            showToast("Extracto agregado al pedido");
+        };
+
+        window.removeFromCart = function(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        };
+
+        window.adjustCartItemQty = function(id, delta) {
+            const index = cart.findIndex(item => item.id === id);
+            if (index > -1) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) {
+                    cart.splice(index, 1);
+                }
+            }
+            updateCartUI();
+        };
+
+        window.sendOrderToWhatsApp = function(e) {
+            e.preventDefault();
+            if (cart.length === 0) return;
+
+            const name = document.getElementById('clientName').value.trim();
+            const city = document.getElementById('clientCity').value.trim();
+            const delivery = document.getElementById('clientDelivery').value;
+            const payment = document.getElementById('clientPayment').value;
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const unitPrice = totalItems >= 2 ? PROMO_PRICE : SINGLE_PRICE;
+            const totalPrice = totalItems * unitPrice;
+
+            let itemsListText = "";
+            cart.forEach((item, index) => {
+                itemsListText += `${index + 1}. *${item.title}* (${item.inspiredBrand}) x ${item.qty} un.\n`;
+            });
+
+            const textMessage = 
+`👑 *NUEVO PEDIDO - C&M PERFUMES* 👑
+----------------------------------
+👤 *Cliente:* ${name}
+📍 *Localidad:* ${city}
+🚚 *Entrega:* ${delivery}
+💳 *Pago:* ${payment}
+
+📦 *DETALLE DE EXTRACTOS 60ML:*
+${itemsListText}
+----------------------------------
+🔢 *Cantidad Total:* ${totalItems} unidad(es)
+🏷️ *Precio por unidad:* $${unitPrice.toLocaleString('es-AR')} ${totalItems >= 2 ? '(¡PROMO APLICADA!)' : ''}
+💰 *TOTAL ESTIMADO:* *$${totalPrice.toLocaleString('es-AR')}*
+----------------------------------
+_¡Hola C&M Perfumes! Quisiera confirmar este pedido._`;
+
+            const encodedMessage = encodeURIComponent(textMessage);
+            const cleanPhone = storeWhatsAppNumber.replace(/\D/g, '');
+            window.open(`https://wa.me/${cleanPhone}?text=${encodedMessage}`, '_blank');
+        };
+
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        function generateProductBottleSVG(product, isSmall = false) {
+            const color = product.bottleColor || '#D4AF37';
+            if (isSmall) {
+                return `
+                <div class="w-12 h-12 flex items-center justify-center">
+                    <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                        <!-- Frasco real C&M 60ml en pequeñito -->
+                        <rect x="25" y="45" width="50" height="60" rx="4" fill="#FFFFFF" fill-opacity="0.9" stroke="#CBD5E1" stroke-width="2"/>
+                        <rect x="25" y="85" width="50" height="20" fill="#E2E8F0" fill-opacity="0.8"/>
+                        <rect x="42" y="25" width="16" height="20" fill="#CBD5E1" stroke="#94A3B8" stroke-width="1.5"/>
+                        <rect x="45" y="15" width="10" height="10" fill="#94A3B8"/>
+                        <rect x="28" y="52" width="44" height="28" rx="2" fill="#FAF7EF" stroke="#D4AF37" stroke-width="1"/>
+                        <text x="50" y="66" font-family="'Cinzel', serif" font-weight="900" font-size="7" fill="#151922" text-anchor="middle">${product.title.split(' ')[0]}</text>
+                    </svg>
+                </div>
+                `;
+            }
+
+            return `
+            <div class="w-full h-full flex flex-col justify-between p-3 relative bg-gradient-to-br from-luxgray-900 via-luxgray-800 to-black rounded-xl border border-gold-500/30 overflow-hidden shadow-2xl select-none group-hover:border-gold-400 transition-all">
+                
+                <!-- Fondo con resplandor dorado de estudio -->
+                <div class="absolute -top-12 -left-12 w-32 h-32 bg-gold-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <!-- Encabezado de la imagen -->
+                <div class="text-right z-10 space-y-0.5 pr-1 pt-1">
+                    <p class="text-[9px] uppercase tracking-widest text-gold-300 font-medium">INSPIRADO EN</p>
+                    <h2 class="font-serif text-sm sm:text-base font-black tracking-wider text-white uppercase leading-none text-shadow-sm">${product.inspiredBrand}</h2>
+                    <p class="text-[8px] uppercase tracking-widest text-gray-400 font-semibold">EAU DE PARFUM</p>
+                </div>
+
+                <!-- Insignia 60 ML C&M con flecha guiadora -->
+                <div class="absolute left-3 top-3 z-10 flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full border border-gold-400/80 bg-luxgray-900/60 backdrop-blur-md flex flex-col items-center justify-center shadow-lg">
+                        <span class="font-serif font-extrabold text-[11px] text-gold-300 leading-none">60</span>
+                        <span class="text-[7px] font-bold text-gray-300 leading-none">ML</span>
+                    </div>
+                    <span class="text-[7px] text-gold-200/80 font-medium uppercase tracking-tighter mt-0.5">Formato Ideal</span>
+                </div>
+
+                <!-- Escenario 3D: Frasco Inspiración (Izquierda) + Frasco 60ml C&M & Caja (Derecha) -->
+                <div class="w-full flex-1 flex items-end justify-between relative my-2 px-1 gap-1">
+                    
+                    <!-- 1. Botella Inspiración Icónica de Diseñador -->
+                    <div class="w-1/2 h-full flex items-end justify-center relative z-10">
+                        <svg viewBox="0 0 140 180" class="h-36 sm:h-40 drop-shadow-[0_10px_15px_rgba(0,0,0,0.7)]">
+                            <defs>
+                                <linearGradient id="mainGrad-${product.id}" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="${color}" />
+                                    <stop offset="60%" stop-color="${color}" stop-opacity="0.8" />
+                                    <stop offset="100%" stop-color="#000000" />
+                                </linearGradient>
+                                <linearGradient id="capGrad-${product.id}" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#FFE885"/>
+                                    <stop offset="50%" stop-color="#D4AF37"/>
+                                    <stop offset="100%" stop-color="#5F460B"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Sombra base -->
+                            <ellipse cx="70" cy="172" rx="55" ry="8" fill="#000000" opacity="0.6"/>
+
+                            <!-- Cuerpo Frasco Diseñador -->
+                            <rect x="25" y="45" width="90" height="120" rx="18" fill="url(#mainGrad-${product.id})" stroke="#D4AF37" stroke-width="1.5"/>
+                            <!-- Brillo/Reflejo Cristal -->
+                            <path d="M 32 50 C 32 50, 45 55, 45 155" stroke="#FFFFFF" stroke-width="3" opacity="0.35" stroke-linecap="round" fill="none"/>
+                            
+                            <!-- Tapón de lujo estilizado -->
+                            <rect x="52" y="16" width="36" height="30" rx="8" fill="url(#capGrad-${product.id})" stroke="#FAF7EF" stroke-width="0.8"/>
+                            <circle cx="70" cy="24" r="8" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+                            
+                            <!-- Etiqueta / Nombre en Frasco Gran Tamaño -->
+                            <text x="70" y="95" font-family="'Cinzel', serif" font-weight="800" font-size="11" fill="#FFFFFF" text-anchor="middle" class="tracking-widest">${product.title.split(' ')[0]}</text>
+                            ${product.title.split(' ')[1] ? `<text x="70" y="110" font-family="'Cinzel', serif" font-weight="700" font-size="9" fill="#F3ECDA" text-anchor="middle">${product.title.split(' ').slice(1).join(' ')}</text>` : ''}
+                        </svg>
+                    </div>
+
+                    <!-- 2. Set C&M Real: Frasco Transparente 60ml + Caja Blanca de Presentación -->
+                    <div class="w-1/2 flex items-end justify-end relative z-20 gap-0.5 pb-1">
+                        
+                        <!-- Frasco C&M 60ml Transparente con Base Frost y Válvula Plata -->
+                        <div class="relative flex flex-col items-center">
+                            <svg viewBox="0 0 90 120" class="w-16 h-24 sm:w-20 sm:h-28 drop-shadow-[0_8px_12px_rgba(0,0,0,0.8)]">
+                                <!-- Sombra -->
+                                <ellipse cx="45" cy="115" rx="35" ry="5" fill="#000" opacity="0.7"/>
+
+                                <!-- Frasco de Vidrio C&M 60ml -->
+                                <rect x="15" y="40" width="60" height="70" rx="5" fill="#FFFFFF" fill-opacity="0.85" stroke="#E2E8F0" stroke-width="1.5"/>
+                                <!-- Líquido perfume dorado tenue -->
+                                <rect x="18" y="55" width="54" height="52" rx="3" fill="${color}" fill-opacity="0.35"/>
+                                <!-- Base frosted / esmerilada -->
+                                <rect x="15" y="92" width="60" height="18" fill="#F1F5F9" fill-opacity="0.7" stroke="#CBD5E1" stroke-width="1"/>
+                                
+                                <!-- Válvula de Spray Metálica Plateada -->
+                                <rect x="38" y="22" width="14" height="18" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1"/>
+                                <rect x="41" y="14" width="8" height="8" fill="#94A3B8"/>
+                                <line x1="45" y1="40" x2="45" y2="90" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="2 1" opacity="0.6"/>
+
+                                <!-- Etiqueta Frontal C&M en el frasco real -->
+                                <rect x="22" y="50" width="46" height="34" rx="3" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1"/>
+                                <text x="45" y="63" font-family="'Cinzel', serif" font-weight="900" font-size="7" fill="#151922" text-anchor="middle">C&M</text>
+                                <text x="45" y="72" font-family="sans-serif" font-weight="700" font-size="4.5" fill="#C59B27" text-anchor="middle">60 ML EXTRACTO</text>
+                            </svg>
+                        </div>
+
+                        <!-- Caja de Presentación C&M -->
+                        <div class="relative flex flex-col items-center -ml-2">
+                            <svg viewBox="0 0 80 120" class="w-14 h-22 sm:w-16 sm:h-26 drop-shadow-[0_8px_16px_rgba(0,0,0,0.9)]">
+                                <!-- Caja 3D -->
+                                <rect x="10" y="20" width="60" height="95" rx="4" fill="#FAFAFA" stroke="#E2E8F0" stroke-width="1.5"/>
+                                <path d="M 10 20 L 22 10 L 82 10 L 70 20 Z" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+                                <path d="M 70 20 L 82 10 L 82 105 L 70 115 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1"/>
+                                
+                                <!-- Ilustración/Dibujo del perfume impreso en la caja -->
+                                <rect x="18" y="32" width="44" height="65" rx="3" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1"/>
+                                <rect x="26" y="48" width="28" height="38" rx="4" fill="${color}" fill-opacity="0.25" stroke="#151922" stroke-width="0.8"/>
+                                <rect x="34" y="38" width="12" height="10" rx="2" fill="#D4AF37"/>
+                                
+                                <text x="40" y="98" font-family="'Cinzel', serif" font-weight="900" font-size="5" fill="#151922" text-anchor="middle">C&M PERFUMES</text>
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Pie de tarjeta estilo Banner Informativo -->
+                <div class="w-full bg-luxgray-900/90 backdrop-blur-md rounded-lg py-1.5 px-3 border border-gold-500/20 flex items-center justify-between text-white z-10">
+                    <span class="text-[9px] font-bold text-gold-300 tracking-wider flex items-center gap-1">
+                        <i class="fa-solid fa-box-open text-gold-400"></i> FRASCO DE 60ML + CAJA
+                    </span>
+                    <span class="text-[8px] font-semibold text-gray-300 bg-gold-500/20 px-2 py-0.5 rounded border border-gold-400/30 uppercase">
+                        PRESENTACIÓN OFICIAL
+                    </span>
+                </div>
+            </div>
+            `;
+        }
+
+        function generateSketchSVG(title) {
+            return `
+            <div class="w-full h-full flex items-center justify-around p-3 bg-white rounded-xl border border-gray-200">
+                <svg viewBox="0 0 120 180" class="h-40 text-gray-800">
+                    <rect x="25" y="40" width="70" height="120" rx="8" fill="#FDE047" fill-opacity="0.3" stroke="#151922" stroke-width="2.5"/>
+                    <rect x="45" y="15" width="30" height="25" rx="3" fill="#FEF08A" stroke="#151922" stroke-width="2.5"/>
+                    <circle cx="60" cy="27" r="5" fill="none" stroke="#151922" stroke-width="2"/>
+                    <line x1="25" y1="65" x2="95" y2="65" stroke="#151922" stroke-width="2.5"/>
+                    <line x1="25" y1="85" x2="95" y2="85" stroke="#151922" stroke-width="2.5"/>
+                    <line x1="25" y1="105" x2="95" y2="105" stroke="#151922" stroke-width="2.5"/>
+                    <text x="60" y="145" font-family="sans-serif" font-size="8" font-weight="bold" fill="#151922" text-anchor="middle">LE MALE</text>
+                </svg>
+
+                <svg viewBox="0 0 90 120" class="h-28 text-gray-800">
+                    <rect x="15" y="40" width="60" height="60" rx="4" fill="#FEF08A" fill-opacity="0.4" stroke="#151922" stroke-width="2"/>
+                    <rect x="15" y="75" width="60" height="25" fill="#FFF" stroke="#151922" stroke-width="2"/>
+                    <rect x="37" y="20" width="16" height="20" fill="#FFF" stroke="#151922" stroke-width="2"/>
+                </svg>
+            </div>
+            `;
+        }
+
+        function generatePyramidSVG(notes) {
+            return `
+            <div class="w-full h-full flex items-center justify-between p-3 bg-white rounded-xl border border-gray-200 text-gray-800 gap-2">
+                <div class="w-1/3 flex items-center justify-center">
+                    <svg viewBox="0 0 100 160" class="h-36 drop-shadow">
+                        <rect x="20" y="30" width="60" height="110" rx="10" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
+                        <rect x="38" y="10" width="24" height="20" rx="3" fill="#D4AF37"/>
+                        <line x1="20" y1="55" x2="80" y2="55" stroke="#000" stroke-width="2" opacity="0.4"/>
+                        <line x1="20" y1="75" x2="80" y2="75" stroke="#000" stroke-width="2" opacity="0.4"/>
+                    </svg>
+                </div>
+
+                <div class="w-2/3 space-y-2.5 text-left text-xs">
+                    <div>
+                        <span class="font-bold text-gray-900 block border-b border-gray-200 pb-0.5">Notas principales</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-[11px] bg-amber-50 text-amber-800 px-2 py-0.5 rounded font-medium border border-amber-200">🌿 ${notes.top}</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="font-bold text-gray-900 block border-b border-gray-200 pb-0.5">Notas medias</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-[11px] bg-yellow-50 text-yellow-800 px-2 py-0.5 rounded font-medium border border-yellow-200">🌼 ${notes.heart}</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="font-bold text-gray-900 block border-b border-gray-200 pb-0.5">Notas base</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-[11px] bg-orange-50 text-orange-800 px-2 py-0.5 rounded font-medium border border-orange-200">🍯 ${notes.base}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
+        function renderCatalog() {
+            const grid = document.getElementById('productsGrid');
+            const noResults = document.getElementById('noResultsState');
+            const searchVal = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+
+            const filtered = products.filter(item => {
+                let matchesCat = true;
+                if(currentCategory === 'top') matchesCat = item.isTop;
+                else if(currentCategory !== 'all') matchesCat = (item.category === currentCategory);
+
+                const matchesSearch = !searchVal || 
+                    item.title.toLowerCase().includes(searchVal) ||
+                    item.inspiredBrand.toLowerCase().includes(searchVal);
+
+                return matchesCat && matchesSearch;
+            });
+
+            document.getElementById('productCounter').innerText = `${filtered.length} fragancias disponibles`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="aura-card rounded-2xl overflow-hidden flex flex-col justify-between group bg-white border border-gray-200">
+                    <div class="pt-4 px-4 text-center bg-white min-h-[58px] flex items-center justify-center border-b border-gray-100">
+                        <h3 class="font-serif font-black text-base sm:text-lg tracking-wide text-luxgray-900 group-hover:text-gold-600 transition uppercase leading-tight">
+                            ${item.title}
+                        </h3>
+                    </div>
+
+                    <div class="relative aspect-square overflow-hidden bg-gradient-to-b from-gray-50 to-white p-2 flex items-center justify-center cursor-pointer" onclick="openProductModal('${item.id}')">
+                        ${generateProductBottleSVG(item)}
+
+                        ${item.isTop ? `
+                            <span class="absolute top-3 right-3 bg-gold-500 text-white font-bold text-[9px] uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow flex items-center gap-1 z-10">
+                                <i class="fa-solid fa-fire"></i> Top
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <div class="p-4 bg-gray-50/50 flex-grow flex flex-col justify-between space-y-3 border-t border-gray-100">
+                        <div class="text-center">
+                            <span class="inline-block bg-gold-50 text-gold-800 border border-gold-200 text-[9px] font-bold tracking-wide uppercase px-3 py-0.5 rounded-full mb-1">
+                                INSPIRADO EN ${item.inspiredBrand}
+                            </span>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">Extracto 60ml • ${item.category}</p>
+                        </div>
+
+                        <div class="pt-2 border-t border-gray-200 flex flex-col items-center justify-center text-center">
+                            <span class="font-serif font-extrabold text-xl text-emerald-600">$20.000</span>
+                            <span class="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full mt-1 border border-emerald-200">
+                                Llevando 2 o más: $17.500 c/u
+                            </span>
+
+                            <div class="w-full grid grid-cols-2 gap-2 mt-3">
+                                <button onclick="openProductModal('${item.id}')" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 rounded-xl text-xs font-bold transition">
+                                    Ver Detalle
+                                </button>
+                                <button onclick="quickAddToCart('${item.id}')" class="w-full gold-button py-2 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm uppercase tracking-wider">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    <span>Agregar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const emptyState = document.getElementById('cartEmptyState');
+            const footer = document.getElementById('cartFooter');
+            const badge = document.getElementById('cartCountBadge');
+            const upsellSection = document.getElementById('cartUpsellSection');
+            const upsellList = document.getElementById('upsellProductsList');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.innerText = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                footer.classList.add('hidden');
+                upsellSection.classList.add('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            footer.classList.remove('hidden');
+
+            const unitPrice = totalItems >= 2 ? PROMO_PRICE : SINGLE_PRICE;
+            const totalPrice = totalItems * unitPrice;
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex items-center justify-between p-3 bg-gray-50 border border-gray-200 rounded-xl gap-3">
+                    <div class="w-12 h-12 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-0.5 shrink-0">
+                        ${generateProductBottleSVG(item, true)}
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-serif font-bold text-xs text-luxgray-900">${item.title}</h4>
+                        <p class="text-[10px] text-gray-500 font-medium">${item.inspiredBrand} (60ml)</p>
+                        <p class="text-xs font-bold text-emerald-600 mt-0.5">$${unitPrice.toLocaleString('es-AR')} c/u</p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center border border-gray-300 rounded-md bg-white">
+                            <button onclick="adjustCartItemQty('${item.id}', -1)" class="px-2 py-1 text-gray-600 hover:text-luxgray-900"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                            <span class="px-2 text-xs font-bold text-luxgray-900">${item.qty}</span>
+                            <button onclick="adjustCartItemQty('${item.id}', 1)" class="px-2 py-1 text-gray-600 hover:text-luxgray-900"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-gray-400 hover:text-red-500 p-1">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (totalItems === 1) {
+                const currentInCartId = cart[0].id;
+                const recommendations = products.filter(p => p.id !== currentInCartId).slice(0, 2);
+
+                upsellList.innerHTML = recommendations.map(rec => `
+                    <div class="flex items-center justify-between bg-white p-2 rounded-xl border border-gold-200 shadow-sm">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                ${generateProductBottleSVG(rec, true)}
+                            </div>
+                            <div>
+                                <span class="font-serif font-bold text-xs text-luxgray-900 block leading-none">${rec.title}</span>
+                                <span class="text-[9px] text-gray-500">${rec.inspiredBrand}</span>
+                            </div>
+                        </div>
+                        <button onclick="addToCart('${rec.id}', 1)" class="gold-button px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
+                            + Sumar a $17.500
+                        </button>
+                    </div>
+                `).join('');
+
+                upsellSection.classList.remove('hidden');
+            } else {
+                upsellSection.classList.add('hidden');
+            }
+
+            document.getElementById('cartTotalItemsCount').innerText = `${totalItems} un.`;
+            document.getElementById('cartUnitPriceNotice').innerText = `$${unitPrice.toLocaleString('es-AR')}`;
+            document.getElementById('cartTotal').innerText = `$${totalPrice.toLocaleString('es-AR')}`;
+
+            const promoBadge = document.getElementById('promoNoticeBadge');
+            if (totalItems >= 2) {
+                promoBadge.className = "p-2.5 rounded-xl text-xs flex items-center gap-2 transition font-medium bg-emerald-100 text-emerald-800 border border-emerald-300";
+                promoBadge.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-sm"></i> ¡Promoción Activa! Pagás <strong>$17.500 c/u</strong>.`;
+            } else {
+                promoBadge.className = "p-2.5 rounded-xl text-xs flex items-center gap-2 transition font-medium bg-amber-50 text-amber-800 border border-amber-200";
+                promoBadge.innerHTML = `<i class="fa-solid fa-fire text-amber-600 text-sm"></i> ¡Sumá 1 unidad más para pagar <strong>$17.500 c/u</strong>!`;
+            }
+        }
+
+        window.onload = function() {
+            renderCatalog();
+            updateCartUI();
+            setCarouselSlide(0);
+
+            if (carouselTimer) clearInterval(carouselTimer);
+            carouselTimer = setInterval(() => {
+                currentSlide = (currentSlide + 1) % 2;
+                setCarouselSlide(currentSlide);
+            }, 5000);
+        };
+    </script>
+</body>
+</html>
