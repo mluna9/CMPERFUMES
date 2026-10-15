@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMPERFUMES - Catálogo de Extractos</title>
+    <style>
+        :root {
+            --primary: #111;
+            --accent: #25d366;
+            --bg: #f9f9f9;
+            --white: #ffffff;
+            --gray: #666;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg); color: var(--primary); line-height: 1.6; }
+        
+        /* Banner superior deslizante (Marquesina) */
+        .banner-ticker {
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .banner-ticker span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 25s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        header {
+            background: var(--white);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+        header h1 { font-size: 28px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        header p { color: var(--gray); font-size: 15px; }
+
+        .info-precios {
+            background: #fff;
+            margin: 15px auto;
+            max-width: 800px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Filtros por categoría */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--white);
+            border: 1px solid #ccc;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Cuadrícula de Productos */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+
+        .image-box {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .image-box img {
+            transform: scale(1.08); /* Zoom al pasar el cursor */
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-info h3 { font-size: 18px; margin-bottom: 8px; color: var(--primary); }
+        .product-info .specs { font-size: 13px; color: var(--gray); margin-bottom: 15px; }
+        .product-info .specs span { display: block; font-weight: 600; color: #333; }
+
+        /* Botón de WhatsApp */
+        .btn-whatsapp {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .btn-whatsapp:hover { background-color: #1ebe5d; }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        footer p { margin-bottom: 8px; font-size: 14px; }
+        footer a { color: #fff; text-decoration: underline; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Banner deslizante superior -->
+    <div class="banner-ticker">
+        <span>📦 Envíos a domicilio &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 📍 Entregas en San Miguel &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🤝 Consultar precios mayoristas y por mayor cantidad &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ✨ Extractos de Parfum premium 60 ml</span>
+    </div>
+
+    <header>
+        <h1>CMPERFUMES</h1>
+        <p>Catálogo Exclusivo - Extractos de Parfum (60 ml)</p>
+    </header>
+
+    <div class="info-precios">
+        Unidad: $20.000 | Comprando en cantidad (Mayorista): $17.500 <br>
+        <span style="font-size: 13px; color: var(--gray); font-weight: normal;">Fijación garantizada + 8 horas en piel</span>
+    </div>
+
+    <!-- Menú de Filtros por Categoría -->
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterCategory('all')">Todos</button>
+        <button class="filter-btn" onclick="filterCategory('femenino')">Femeninos</button>
+        <button class="filter-btn" onclick="filterCategory('masculino')">Masculinos</button>
+        <button class="filter-btn" onclick="filterCategory('unisex')">Unisex</button>
+        <button class="filter-btn" onclick="filterCategory('nicho')">Nicho</button>
+    </div>
+
+    <!-- Catálogo de Productos (32 Fragancias) -->
+    <div class="catalog-container" id="catalog">
+
+        <!-- 🌸 FEMENINOS -->
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/my-way.jpg" alt="Giorgio Armani My Way"></div>
+            <div class="product-info">
+                <h3>Giorgio Armani - My Way</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20My%20Way%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/la-bomba.jpg" alt="Victoria's Secret Bombshell"></div>
+            <div class="product-info">
+                <h3>Victoria's Secret - Bombshell (La Bomba)</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20La%20Bomba%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/good-girl.jpg" alt="Carolina Herrera Good Girl"></div>
+            <div class="product-info">
+                <h3>Carolina Herrera - Good Girl</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Good%20Girl%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/212-vip-rose.jpg" alt="Carolina Herrera 212 VIP Rose"></div>
+            <div class="product-info">
+                <h3>Carolina Herrera - 212 VIP Rosé</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20212%20VIP%20Rose%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/olympea.jpg" alt="Paco Rabanne Olympea"></div>
+            <div class="product-info">
+                <h3>Paco Rabanne - Olympéa</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Olympea%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/lady-million.jpg" alt="Paco Rabanne Lady Million"></div>
+            <div class="product-info">
+                <h3>Paco Rabanne - Lady Million</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Lady%20Million%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/la-vie-est-belle.jpg" alt="Lancôme La Vie Est Belle"></div>
+            <div class="product-info">
+                <h3>Lancôme - La Vie Est Belle</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20La%20Vie%20Est%20Belle%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/jadore.jpg" alt="Dior J'adore"></div>
+            <div class="product-info">
+                <h3>Dior - J'adore</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Jadore%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/coco-mademoiselle.jpg" alt="Chanel Coco Mademoiselle"></div>
+            <div class="product-info">
+                <h3>Chanel - Coco Mademoiselle</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Coco%20Mademoiselle%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="femenino">
+            <div class="image-box"><img src="img/black-opium.jpg" alt="YSL Black Opium"></div>
+            <div class="product-info">
+                <h3>Yves Saint Laurent - Black Opium</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Black%20Opium%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- 🎩 MASCULINOS -->
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/one-million.jpg" alt="Paco Rabanne 1 Million"></div>
+            <div class="product-info">
+                <h3>Paco Rabanne - 1 Million</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%201%20Million%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/bad-boy.jpg" alt="Carolina Herrera Bad Boy"></div>
+            <div class="product-info">
+                <h3>Carolina Herrera - Bad Boy</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Bad%20Boy%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/212-vip-men.jpg" alt="Carolina Herrera 212 VIP Men"></div>
+            <div class="product-info">
+                <h3>Carolina Herrera - 212 VIP Men</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20212%20VIP%20Men%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/sauvage.jpg" alt="Dior Sauvage"></div>
+            <div class="product-info">
+                <h3>Dior - Sauvage</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Sauvage%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/acqua-di-gio.jpg" alt="Giorgio Armani Acqua Di Gio"></div>
+            <div class="product-info">
+                <h3>Giorgio Armani - Acqua Di Gio</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Acqua%20Di%20Gio%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/le-male.jpg" alt="Jean Paul Gaultier Le Male"></div>
+            <div class="product-info">
+                <h3>Jean Paul Gaultier - Le Male</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Le%20Male%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/invictus-victory.jpg" alt="Paco Rabanne Invictus Victory"></div>
+            <div class="product-info">
+                <h3>Paco Rabanne - Invictus Victory</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Invictus%20Victory%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/boss-bottled.jpg" alt="Hugo Boss Bottled"></div>
+            <div class="product-info">
+                <h3>Hugo Boss - Bottled</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Hugo%20Boss%20Bottled%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/versace-eros.jpg" alt="Versace Eros"></div>
+            <div class="product-info">
+                <h3>Versace - Eros</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Versace%20Eros%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="masculino">
+            <div class="image-box"><img src="img/creed-aventus.jpg" alt="Creed Aventus"></div>
+            <div class="product-info">
+                <h3>Creed - Aventus</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Creed%20Aventus%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- ⚡ UNISEX -->
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/black-orchid.jpg" alt="Tom Ford Black Orchid"></div>
+            <div class="product-info">
+                <h3>Tom Ford - Black Orchid</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Black%20Orchid%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/tobacco-vanille.jpg" alt="Tom Ford Tobacco Vanille"></div>
+            <div class="product-info">
+                <h3>Tom Ford - Tobacco Vanille</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Tobacco%20Vanille%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/baccarat-rouge.jpg" alt="Baccarat Rouge 540"></div>
+            <div class="product-info">
+                <h3>Maison Francis Kurkdjian - Baccarat Rouge 540</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Baccarat%20Rouge%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/santal-33.jpg" alt="Le Labo Santal 33"></div>
+            <div class="product-info">
+                <h3>Le Labo - Santal 33</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Santal%2033%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/jo-malone-wood-sage.jpg" alt="Jo Malone Wood Sage"></div>
+            <div class="product-info">
+                <h3>Jo Malone - Wood Sage & Sea Salt</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Wood%20Sage%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="unisex">
+            <div class="image-box"><img src="img/byredo-gypsy.jpg" alt="Byredo Gypsy Water"></div>
+            <div class="product-info">
+                <h3>Byredo - Gypsy Water</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Gypsy%20Water%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- 💎 NICHO -->
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/erba-pura.jpg" alt="Xerjoff Erba Pura"></div>
+            <div class="product-info">
+                <h3>Xerjoff - Erba Pura</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Erba%20Pura%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/kilian-angels-share.jpg" alt="Kilian Angels Share"></div>
+            <div class="product-info">
+                <h3>Kilian - Angels' Share</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Angels%20Share%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/pdm-delina.jpg" alt="Parfums de Marly Delina"></div>
+            <div class="product-info">
+                <h3>Parfums de Marly - Delina</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Delina%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/pdm-layton.jpg" alt="Parfums de Marly Layton"></div>
+            <div class="product-info">
+                <h3>Parfums de Marly - Layton</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Layton%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/nishane-hacivat.jpg" alt="Nishane Hacivat"></div>
+            <div class="product-info">
+                <h3>Nishane - Hacivat</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Hacivat%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="nicho">
+            <div class="image-box"><img src="img/creed-silver-mountain.jpg" alt="Creed Silver Mountain Water"></div>
+            <div class="product-info">
+                <h3>Creed - Silver Mountain Water</h3>
+                <div class="specs"><span>Extrait de Parfum - 60 ml</span>Fijación en piel: + 8 horas</div>
+                <a href="https://wa.me/54911XXXXXXXX?text=Hola!%20Quiero%20encargar%20el%20perfume%20Silver%20Mountain%20(60ml)" target="_blank" class="btn-whatsapp">Pedir por WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>CMPERFUMES &copy; 2026 - Todos los derechos reservados.</p>
+        <p>Seguinos en Instagram: <a href="https://instagram.com/indumentaria.drake" target="_blank">@indumentaria.drake</a></p>
+    </footer>
+
+    <script>
+        // Función interactiva para el filtrado por categorías
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
